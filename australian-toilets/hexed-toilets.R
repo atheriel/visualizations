@@ -35,7 +35,7 @@ attribution <- paste(
 )
 
 toilets <-
-    read.csv("toiletmap.csv",
+    read.csv(gzfile("toiletmap.csv.xz"),
              header = TRUE, stringsAsFactors = FALSE) %>%
     mutate(long = Longitude, lat = Latitude,
            free = !as.logical(PaymentRequired)) %>%
