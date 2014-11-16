@@ -1,5 +1,5 @@
 <center>
-![Sample Output](http://i.imgur.com/xgAGOKq.png)
+![Sample Output](http://i.imgur.com/6UGuxyI.png)
 </center>
 
 This is a simple population map that makes use of hexbins to deal with
