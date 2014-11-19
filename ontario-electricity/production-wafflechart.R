@@ -25,6 +25,12 @@ source("util.R")
 font.add("minion", regular = "MinionPro-Regular.otf")
 font.add("zapf", regular = "ZapfChanceryStd-Roman.ttf")
 
+# ===------------------------------------------------------=== #
+# Convert the data and construct the atribution string.
+# ===------------------------------------------------------=== #
+
+if (!QUIET) write("--- Converting raw data.", file = "")
+
 attribution <- paste(
     scan(file = "AUTHOR.txt", what = character(), sep = "\n", quiet = TRUE),
     "Data: Ontario Power Generation Authority (2013)",
