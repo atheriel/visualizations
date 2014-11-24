@@ -7,19 +7,26 @@ QUIET = FALSE
 if (!QUIET) write("--- Loading required packages and fonts.", file = "")
 
 library(methods)
-library(ggplot2)
-library(grid)
-library(gridExtra, quietly = TRUE)
-library(dplyr, warn.conflicts = FALSE)
+
+if (!require("ggplot2", quietly = TRUE))
+    stop("The ggplot2 package is required to run this script.")
+if (!require("grid", quietly = TRUE))
+    stop("The grid package is required to run this script.")
+if (!require("gridExtra", quietly = TRUE))
+    stop("The gridExtra package is required to run this script.")
+if (!require("dplyr", quietly = TRUE, warn.conflicts = FALSE))
+    stop("The dplyr package is required to run this script.")
+
 suppressPackageStartupMessages(
-    library(showtext)
+    if (!require("showtext", quietly = TRUE))
+        stop("The showtext package is required to run this script.")
 )
 
 # Envy Code R is a thin monospaced font, mostly used for programming. But it
 # looks stylish and fits the graphic in this case. Minion Pro is the standard
 # serif Adobe font.
-font.add("custom", regular = "Envy Code R.ttf")
-font.add("customsf", regular = "MinionPro-Regular.otf")
+font.add("envycoder", regular = "Envy Code R.ttf")
+font.add("minion", regular = "MinionPro-Regular.otf")
 
 # ===------------------------------------------------------=== #
 # Read in the toilet data and construct the atribution string.
@@ -72,7 +79,7 @@ graphic <- arrangeGrob(
     ) +
     geom_text(aes(x = long, y = lat, label = name, vjust = vjust,
                   hjust = hjust), data = poi,
-              family = "custom", lineheight = 0.8, size = 4) +
+              family = "envycoder", lineheight = 0.8, size = 4) +
     theme(panel.background = element_rect(fill = "gray90", colour = NA),
           plot.background = element_rect(fill = "gray90", colour = NA),
           # Remove titles, ticks, gridlines, and borders.
@@ -82,7 +89,7 @@ graphic <- arrangeGrob(
           panel.grid = element_blank(),
           panel.border = element_blank(),
           # Move the legend somewhere nice.
-          legend.text = element_text(family = "custom", size = 8),
+          legend.text = element_text(family = "envycoder", size = 8),
           legend.position = c(0.35, 0.1),
           # legend.position = c(0.27, 0.975),
           legend.direction = "horizontal",
@@ -98,13 +105,13 @@ graphic <- arrangeGrob(
                   "(You'll Just Have to Hold It 'Till Perth)"),
         hjust = c(0, 0), vjust = c(1, 1), x = unit(c(0.04, 0.04), "npc"),
         y = unit(c(0, -1.4), "line"),
-        gp = gpar(fontsize = c(18, 10), fontfamily = "customsf",
+        gp = gpar(fontsize = c(18, 10), fontfamily = "minion",
                   fontface = "plain", col = "black")),
     # And similarly, a more complex subtext using another textGrob.
     sub = textGrob(
         x = unit(0.01, "npc"), y = unit(0.2, "npc"),
         hjust = 0, vjust = 0,
-        gp = gpar(fontsize = 7, fontfamily = "customsf", lineheight = 1.0,
+        gp = gpar(fontsize = 7, fontfamily = "minion", lineheight = 1.0,
                   col = "black"),
         label = attribution)
 )
