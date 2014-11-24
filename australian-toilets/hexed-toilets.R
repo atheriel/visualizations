@@ -37,9 +37,8 @@ attribution <- paste(
 toilets <-
     read.csv(gzfile("toiletmap.csv.xz"),
              header = TRUE, stringsAsFactors = FALSE) %>%
-    mutate(long = Longitude, lat = Latitude,
-           free = !as.logical(PaymentRequired)) %>%
-    select(ToiletID, long, lat, free)
+    mutate(long = Longitude, lat = Latitude) %>%
+    select(ToiletID, long, lat)
 
 poi <- data.frame(
     name = c("Perth", "Sydney", "Melbourne", "Brisbane", "Adelaide",
@@ -63,8 +62,7 @@ graphic <- arrangeGrob(
     ggplot(toilets, aes(x = long, y = lat)) +
     stat_binhex(aes(fill = cut(..count..,
                                c(0, 5, 10, 50, 100, 500, 1000, Inf))),
-                bins = 30, colour = NA,
-                alpha = 0.8) +
+                colour = NA, alpha = 0.8) +
     coord_equal() +
     labs(fill = NULL) +
     scale_fill_brewer(
