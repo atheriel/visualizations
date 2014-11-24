@@ -64,6 +64,13 @@ poi <- data.frame(
 
 if (!QUIET) write("--- Constructing graphic.", file = "")
 
+# We can set the background of the PNG using the "bg" parameter.
+png(file = "australia-raw.png",
+    width = 7 * 300, height = 6.5 * 300, res = 300, bg = "gray90")
+
+# The custom font is rendered by the `showtext` library.
+showtext.begin()
+
 # We create a graphic with a title and subtext using the arrangeGrob object.
 graphic <- arrangeGrob(
     ggplot(toilets, aes(x = long, y = lat)) +
@@ -116,13 +123,9 @@ graphic <- arrangeGrob(
         label = attribution)
 )
 
-if (!QUIET) write("--- Writing output to <australia-raw.png>.", file = "")
-
-# We can set the background of the PNG using the "bg" parameter.
-png("australia-raw.png",
-    width = 7 * 300, height = 6.5 * 300, res = 300, bg = "gray90")
-# The custom font is rendered by the `showtext` library.
-showtext.begin()
+# Actually write the graphic to the PNG file.
 print(graphic)
 showtext.end()
 tmp <- dev.off()
+
+if (!QUIET) write("--- Output written to <australia-raw.png>.", file = "")
