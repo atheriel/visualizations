@@ -33,7 +33,7 @@ if (!QUIET) write("--- Converting raw data.", file = "")
 
 attribution <- paste(
     scan(file = "AUTHOR.txt", what = character(), sep = "\n", quiet = TRUE),
-    "Data: Ontario Power Generation Authority (2013)",
+    "Data: Ontario Power Authority (2013)",
     "You may redistribute this graphic under the terms of the CC-by-SA license.",
     sep = "\n"
 )
