@@ -6,6 +6,12 @@ all of the code (and the data, when possible) you will need to reproduce the
 image shown in that projects's `README.md` file. Some projects are not yet
 finished, of course, and in that case your mileage may vary.
 
+## Gallery
+
+<center>
+You can find a gallery of the projects [here](http://imgur.com/a/zMlvu#0).
+</center>
+
 ## License
 
 This is a bit tricky. All source code is licensed under the project license
