@@ -31,7 +31,7 @@ The raw data come from the following publication:
 
 1. Ontario Power Authority. 2013. "Achieving Balance: Ontario's Long-Term
    Energy Plan", p. 9. Available
-   [online]http://www.energy.gov.on.ca/en/files/2014/10/LTEP_2013_English_WEB.pdf).
+   [online](http://www.energy.gov.on.ca/en/files/2014/10/LTEP_2013_English_WEB.pdf).
 
 The inclusion of the data in the script here is for research purposes and so it
 should qualify as fair dealing in Canada (and many other jurisdictions).
