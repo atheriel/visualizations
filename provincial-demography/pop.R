@@ -62,7 +62,8 @@ pop <- raw.data %>%
   # Collapse to age bins.
   group_by(geo, year, sex, age) %>%
   summarise(pop = sum(as.numeric(pop))) %>%
-  ungroup()
+  ungroup() %>%
+  mutate(geo = factor(geo, levels = PROVS))
 
 # ===------------------------------------------------------=== #
 # Save to disk.
