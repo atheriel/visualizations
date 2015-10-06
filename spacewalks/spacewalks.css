@@ -1,0 +1,30 @@
+rect.chart-bar {
+    stroke: none;
+    fill: #ccc;
+    shape-rendering: geometricPrecision;
+}
+
+rect.chart-bar.chart-bar-usa {
+    fill: #069;
+}
+
+rect.chart-bar.chart-bar-russia {
+    fill: #d44950;
+}
+
+rect.chart-bar-overlay {
+    fill: none;
+}
+
+.chart-axis line {
+    stroke: #ccc;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.chart-axis text {
+    text-anchor: start;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    fill: #888;
+}
