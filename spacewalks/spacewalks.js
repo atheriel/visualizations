@@ -57,7 +57,7 @@ function ready(error, data) {
 	.attr("markerHeight", 9)
 	.attr("orient", "auto")
 	.append("path")
-	.style("fill", "#ccc")
+	.style("fill", "#888")
 	.style("shape-rendering", "geometricPrecision")
 	.attr("d", "M 0 0 6 3 0 6 1.5 3");
 
@@ -91,7 +91,7 @@ function ready(error, data) {
     durationAxis.append("line")
 	.attr("x1", 350)
 	.attr("y1", chart.timeScale(1) - 15)
-	.attr("x2", 200)
+	.attr("x2", 250)
 	.attr("y2", chart.timeScale(1) - 15)
 	.attr("marker-end", "url(#Triangle)");
 

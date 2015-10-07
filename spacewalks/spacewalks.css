@@ -17,14 +17,15 @@ rect.chart-bar-overlay {
 }
 
 .chart-axis line {
-    stroke: #ccc;
+    stroke: #888;
     stroke-width: 1px;
     shape-rendering: crispEdges;
 }
 
 .chart-axis text {
     text-anchor: start;
-    font-size: 0.65rem;
-    text-transform: uppercase;
     fill: #888;
+    font-size: 0.7rem;
+    font-family: "PT Serif", serif;
+    font-style: italic;
 }
